@@ -6,8 +6,8 @@
 - [Developers](#developers)
 - [Technologies Used](#technologies-used)
 - [Features](#features)
-- [Test Suite](#test-suite)
 - [Getting Started](#getting-started)
+- [Test Suite](#test-suite)
 
 ## Developers
 
@@ -27,6 +27,7 @@
 - [Vite](https://vite.dev/) - frontend build tool
 - [Hugging Face Inference API: distilbert-based Multilingual Sentiment Classification Model by Tabularis.AI](https://huggingface.co/tabularisai/multilingual-sentiment-analysis) - used for sentiment analysis
 - [Web Crypto API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API) - used for client-side encryption
+- [Resend API](https://resend.com/) - used for sending emails
 - [Google OAuth 2.0](https://developers.google.com/identity/protocols/oauth2) - used to support Google logins
 - [Mocha](https://mochajs.org/) - JavaScript test framework that runs on Node.js
 - [Chai](https://www.chaijs.com/) - JavaScript assertion library for Node.js
@@ -80,40 +81,80 @@
 - Tutorial for first-time users
 <img width="1080" height="528" alt="1313d30d-219b-4acf-8b20-d0adb6135830" src="https://github.com/user-attachments/assets/d9bde3db-eeef-4370-80ba-69cdcbdedd60" />
 
-## Test Suite
-We implemented a comprehensive test suite using the Mocha and Chai testing frameworks, as well as mongodb-memory-server and supertest. Our backend tests cover all API routes for entries, tags, and users; our frontend tests cover filtering for our search functionality. Additionally, we used mochawesome to generate our test reports.
-
-### Instructions to run
-1. Please follow Steps #1 and #2 below from [Getting Started](#instructions-to-run-1)
-    - Clone this repo, go to the `FinalRelease` branch, and add the `.env` file
-2. If you would like to run the test suite image separately, run `docker compose up --build test`
-4. Otherwise, follow the remaining instructions below, and test reports will be automatically generated in Step #6
-
-### Links
-- [Backend tests](https://github.students.cs.ubc.ca/CPSC455-2025S/team15/tree/FinalRelease/Backend/test)
-- [Frontend tests](https://github.students.cs.ubc.ca/CPSC455-2025S/team15/tree/FinalRelease/Frontend/test)
-
 ## Getting Started
-The following credentials need to be included in your `.env` file:
-- `GOOGLE_ID`
-- `MONGODB_ID`
-- `RESEND_API_KEY`
-- `VITE_GOOGLE_ID`
-- `VITE_HUGGINGFACE_ID`
 
-### Instructions to run
+### Prerequisites
+You will need to have credentials for [Google OAuth 2.0](https://developers.google.com/identity/protocols/oauth2), [MongoDB Atlas](https://www.mongodb.com/atlas), [Resend API](https://resend.com/), and [Hugging Face API](https://huggingface.co/tabularisai/multilingual-sentiment-analysis).
+
+Create a `.env` file with the following credentials:
+- `GOOGLE_ID` - your Google OAuth 2.0 key
+- `MONGODB_ID` - your MongoDB Atlas key
+- `RESEND_API_KEY` - your Resend API key
+- `VITE_GOOGLE_ID` - your Google OAuth 2.0 key
+- `VITE_HUGGINGFACE_ID` - your Hugging Face API key
+- `VITE_API_URL=http://localhost:3000`
+
+### Running the app locally
+1. Clone this repo
+2. Replace the `.env.example` file in the root directory with your `.env` file
+3. Install dependencies for both frontend and backend:
+   ```bash
+   cd Backend && npm install
+   cd ../Frontend && npm install
+   ```
+4. Start the backend server:
+   ```bash
+   cd Backend && npm run dev
+   ```
+5. In a new terminal, start the frontend:
+   ```bash
+   cd Frontend && npm run dev
+   ```
+6. Backend API runs at: http://localhost:3000
+7. Frontend will be available at: http://localhost:5174 (or the port shown in your terminal)
+
+### Running the app on Docker
 1. Clone this repo
 2. Replace the `.env.example` file in the root directory with your `.env` file
 3. Run `docker compose up --build`
-4. Backend API runs at: http://localhost:5000
+4. Backend API runs at: http://localhost:3000
 5. Frontend will be available at: http://localhost
-    - Please login using our test user:
-        - Email: testhash@email.com
-        - Password: testingthehash
-    - Email account for Time Capsule:
-        - email: emotionary@yahoo.com
-        - password: emotionSlary1$!
-6. Tests reports are automatically generated in the project's root directory in the `test-results` folder and can be opened in your browser of choice:
+6. Test reports are automatically generated in the project's root directory in the `test-results` folder and can be opened in your browser of choice:
     - `backend-test-report.html`
-
     - `frontend-test-report.html`
+
+## Test Suite
+We implemented a comprehensive test suite using the Mocha and Chai testing frameworks, as well as Vitest for frontend testing and Supertest for API testing. Our backend tests cover all API routes for entries, tags, and users; our frontend tests cover filtering for our search functionality. Additionally, we used mochawesome to generate our test reports.
+
+### Running tests locally
+1. Clone this repo and add the `.env` file
+2. Install dependencies:
+   ```bash
+   cd Backend && npm install
+   cd ../Frontend && npm install
+   ```
+3. Run backend tests:
+   ```bash
+   cd Backend && npm test
+   ```
+4. Run frontend tests:
+   ```bash
+   cd Frontend && npm test
+   ```
+5. Test reports will be generated in the `test-results` folder
+
+### Running tests on Docker
+1. Clone this repo and add the `.env` file
+2. If you would like to run the test suite separately:
+   ```bash
+   docker compose up --build test
+   ```
+3. Or run the full application (which includes test generation):
+   ```bash
+   docker compose up --build
+   ```
+4. Test reports will be automatically generated in the project's root directory in the `test-results` folder
+
+### Links
+- [Backend tests](https://github.com/sophiapobre/emotionary/tree/be1f0ed7bc43d72e03ad3d0ccde990cf52e82df6/Backend/test)
+- [Frontend tests](https://github.com/sophiapobre/emotionary/tree/be1f0ed7bc43d72e03ad3d0ccde990cf52e82df6/Frontend/test)
