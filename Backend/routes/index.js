@@ -12,15 +12,6 @@ router.get("/", (req, res) => {
   res.send("Hello from Node API");
 });
 
-// Health check endpoint
-router.get('/health', (req, res) => {
-  res.status(200).json({ 
-    status: 'ok', 
-    timestamp: new Date().toISOString(),
-    message: 'Server is healthy' 
-  });
-});
-
 router.use('/entries', entry);
 router.use('/tags', tag);
 router.use('/users', user);
