@@ -30,7 +30,7 @@ import LetterButton from "./buttons/LetterButton";
 
 const client = new InferenceClient(import.meta.env.VITE_HUGGINGFACE_ID);
 
-const BACKEND_URL = "https://emotionary-backend.vercel.app";
+const BACKEND_URL = import.meta.env.VITE_API_URL || "https://emotionary-backend.vercel.app";
 
 // base component: https://mui.com/material-ui/react-dialog/
 const CreateEditEntryModal = ({

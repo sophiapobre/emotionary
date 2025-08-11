@@ -12,7 +12,7 @@ import EditButton from './buttons/EditButton'
 import MoodButton from './buttons/MoodButton';
 import { fetchEntries } from '../features/entries/entriesSlice';
 
-const BACKEND_URL = "https://emotionary-backend.vercel.app";
+const BACKEND_URL = import.meta.env.VITE_API_URL || "https://emotionary-backend.vercel.app";
 
 // base component: https://mui.com/material-ui/react-dialog/
 const ViewEntryModal = ({ isOpen, onClose, onEdit, entry }) => {

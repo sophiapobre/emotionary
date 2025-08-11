@@ -17,7 +17,7 @@ import { fetchEntries } from "../features/entries/entriesSlice";
 import { RESET_APP } from "../app/rootReducer";
 import { del } from 'idb-keyval';
 
-const BACKEND_URL = "https://emotionary-backend.vercel.app";
+const BACKEND_URL = import.meta.env.VITE_API_URL || "https://emotionary-backend.vercel.app";
 
 const NavMenu = styled("ul")(({ theme }) => ({
   display: "flex",

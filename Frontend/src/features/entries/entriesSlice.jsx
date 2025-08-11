@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const BACKEND_URL = "https://emotionary-backend.vercel.app";
+const BACKEND_URL = import.meta.env.VITE_API_URL || "https://emotionary-backend.vercel.app";
 
 export const fetchEntries = createAsyncThunk('entries/fetchEntries', async (_, { getState }) => {
     const userId = getState().auth.userId;

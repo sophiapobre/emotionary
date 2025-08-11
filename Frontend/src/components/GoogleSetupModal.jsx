@@ -18,7 +18,7 @@ import PrivacyPolicyModal from "./PrivacyPolicyModal";
 import PasskeyRequirements, { getPasskeyRequirements } from "./PasskeyRequirements";
 import { deriveKey, encryptContent, decryptContent } from "../utils/crypto";
 
-const BACKEND_URL = "https://emotionary-backend.vercel.app";
+const BACKEND_URL = import.meta.env.VITE_API_URL || "https://emotionary-backend.vercel.app";
 
 const style = {
   position: "absolute",

@@ -19,7 +19,7 @@ import dayjs from "dayjs";
 import { useSelector } from "react-redux";
 import { useTheme } from '@mui/material';
 
-const BACKEND_URL = "https://emotionary-backend.vercel.app";
+const BACKEND_URL = import.meta.env.VITE_API_URL || "https://emotionary-backend.vercel.app";
 
 const Letter = () => {
   const theme = useTheme();

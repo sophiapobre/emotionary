@@ -13,7 +13,7 @@ import { UserTourStatus, createTourSteps } from "../utils/tour/tourConfig";
 import DailyPrompt from "../components/DailyPrompt";
 import MentalHealthIndicator from "../components/MentalHealthIndicator";
 
-const BACKEND_URL = "https://emotionary-backend.vercel.app";
+const BACKEND_URL = import.meta.env.VITE_API_URL || "https://emotionary-backend.vercel.app";
 
 const Home = ({ cryptoKey }) => {
   const userId = useSelector((state) => state.auth.userId);

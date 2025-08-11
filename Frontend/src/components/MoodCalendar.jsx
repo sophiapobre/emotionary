@@ -7,7 +7,7 @@ import { PickersDay } from '@mui/x-date-pickers/PickersDay';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import { DayCalendarSkeleton } from '@mui/x-date-pickers/DayCalendarSkeleton';
 
-const BACKEND_URL = "https://emotionary-backend.vercel.app";
+const BACKEND_URL = import.meta.env.VITE_API_URL || "https://emotionary-backend.vercel.app";
 
 // NOT USED
 // source code: https://github.com/mui/mui-x/blob/v8.5.2/docs/data/date-pickers/date-calendar/DateCalendarServerRequest.tsx
