@@ -7,6 +7,9 @@ services:
       - GOOGLE_ID=${GOOGLE_ID}
       - MONGODB_ID=${MONGODB_ID}
       - RESEND_API_KEY=${RESEND_API_KEY}
+      - NODE_ENV=development
+    networks:
+      - app-network
 
   frontend:
     build:
@@ -14,10 +17,13 @@ services:
       args:
         VITE_GOOGLE_ID: ${VITE_GOOGLE_ID}
         VITE_HUGGINGFACE_ID: ${VITE_HUGGINGFACE_ID}
+        VITE_API_URL: "http://localhost:3000" 
     ports:
       - "80:80"
     depends_on:
       - backend
+    networks:
+      - app-network
 
   test:
     build:
@@ -26,10 +32,18 @@ services:
       args:
         VITE_GOOGLE_ID: ${VITE_GOOGLE_ID}
         VITE_HUGGINGFACE_ID: ${VITE_HUGGINGFACE_ID}
+        VITE_API_URL: "http://localhost:3000"
     environment:
       - GOOGLE_ID=${GOOGLE_ID}
       - MONGODB_ID=${MONGODB_ID}
       - RESEND_API_KEY=${RESEND_API_KEY}
       - TZ=America/Los_Angeles
+      - DOCKER=true
     volumes:
       - ./test-results:/app/test-results
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
