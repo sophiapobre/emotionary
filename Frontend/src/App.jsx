@@ -23,6 +23,7 @@ import {
 } from "./utils/tour/ShepherdContext";
 import "shepherd.js/dist/css/shepherd.css";
 import "./utils/tour/shepherd.css";
+import KeepAlive from "./components/KeepAlive";
 
 function MainLayout({ cryptoKey }) {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -92,6 +93,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <KeepAlive />
       <CssBaseline />
       <BrowserRouter>
         <Routes>
