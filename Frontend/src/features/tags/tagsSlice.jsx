@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const BACKEND_URL = "https://emotionary-api.onrender.com";
+const BACKEND_URL = "https://emotionary-backend.vercel.app";
 
 export const fetchTags = createAsyncThunk('tags/fetchTags', async (_, { getState }) => {
   const userId = getState().auth.userId;

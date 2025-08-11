@@ -18,7 +18,7 @@ import PrivacyPolicyModal from "./PrivacyPolicyModal";
 import PasskeyRequirements, { getPasskeyRequirements } from "./PasskeyRequirements";
 import { deriveKey, encryptContent, decryptContent } from "../utils/crypto";
 
-const BACKEND_URL = "https://emotionary-api.onrender.com";
+const BACKEND_URL = "https://emotionary-backend.vercel.app";
 
 const style = {
   position: "absolute",

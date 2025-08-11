@@ -9,7 +9,7 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import LetterButton from './buttons/LetterButton';
 
-const BACKEND_URL = "https://emotionary-api.onrender.com";
+const BACKEND_URL = "https://emotionary-backend.vercel.app";
 
 const TagManagementModal = ({ open, onClose, userId, userTags = [], onTagUpdated }) => {
   const [showCreateForm, setShowCreateForm] = useState(false);

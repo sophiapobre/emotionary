@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const BACKEND_URL = "https://emotionary-api.onrender.com";
+const BACKEND_URL = "https://emotionary-backend.vercel.app";
 
 // Pings the Render backend every 10 minutes to prevent it from falling asleep
 const KeepAlive = () => {
