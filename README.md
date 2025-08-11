@@ -1,8 +1,11 @@
 ﻿# emotionary
+ 
+*emotionary* is a journaling web app that uses ML to perform sentiment analysis on users' journal entries, allowing users to easily track their mood trends through visual insights. Our app offers a seamless and intuitive user experience, complete with features such as tagging, favoriting, filtering, and search. Our top priority is user privacy, and we securely encrypt journal entry content using password-based key derivation.
 
-*emotionary* is a journaling app with sentiment analysis that helps users reflect on their moods through visual insights. Our app offers a seamless and intuitive user experience, complete with features such as tagging, favoriting, filtering, and search. Our top priority is user privacy, and we securely encrypt journal entry content using password-based key derivation.
+You can demo the app [here](https://emotionary-ubc.vercel.app).
 
 ## Table of Contents
+
 - [Developers](#developers)
 - [Technologies Used](#technologies-used)
 - [Features](#features)
@@ -33,6 +36,7 @@
 - [Chai](https://www.chaijs.com/) - JavaScript assertion library for Node.js
 
 ## Features
+
 - Homepage
 <img width="1470" height="797" alt="Screenshot 2025-08-11 at 4 05 41 pm" src="https://github.com/user-attachments/assets/c17da8e4-5d7b-4a9d-940f-7d4029d5ffd7" />
 
@@ -158,3 +162,4 @@ We implemented a comprehensive test suite using the Mocha and Chai testing frame
 ### Links
 - [Backend tests](https://github.com/sophiapobre/emotionary/tree/be1f0ed7bc43d72e03ad3d0ccde990cf52e82df6/Backend/test)
 - [Frontend tests](https://github.com/sophiapobre/emotionary/tree/be1f0ed7bc43d72e03ad3d0ccde990cf52e82df6/Frontend/test)
+
