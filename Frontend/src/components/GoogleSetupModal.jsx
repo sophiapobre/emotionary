@@ -18,6 +18,8 @@ import PrivacyPolicyModal from "./PrivacyPolicyModal";
 import PasskeyRequirements, { getPasskeyRequirements } from "./PasskeyRequirements";
 import { deriveKey, encryptContent, decryptContent } from "../utils/crypto";
 
+const BACKEND_URL = "https://emotionary-api.onrender.com";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -80,7 +82,7 @@ export default function GoogleSetupModal({ user, open, hide, setCryptoKey }) {
       // This will be used to verify the passkey during login
       const { iv, content } = await encryptContent("verified", key);
       
-      const response = await fetch("http://localhost:3000/users/complete-setup", {
+      const response = await fetch(`${BACKEND_URL}/users/complete-setup`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId: user.id, verifyPasskey_content: content, verifyPasskey_iv: iv }),
@@ -109,7 +111,7 @@ export default function GoogleSetupModal({ user, open, hide, setCryptoKey }) {
       const key = await deriveKey(passkey, user.id);
 
       // Fetch the encrypted verification value and IV from the server
-      const response = await fetch(`http://localhost:3000/users/verify-passkey/${user.id}`);
+      const response = await fetch(`${BACKEND_URL}/users/verify-passkey/${user.id}`);
       if (!response.ok) {
         throw new Error("Could not verify user. Please try again.");
       }

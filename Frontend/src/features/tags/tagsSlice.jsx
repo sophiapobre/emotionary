@@ -1,8 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
+const BACKEND_URL = "https://emotionary-api.onrender.com";
+
 export const fetchTags = createAsyncThunk('tags/fetchTags', async (_, { getState }) => {
   const userId = getState().auth.userId;
-  const response = await fetch(`http://localhost:3000/tags/${userId}`);
+  const response = await fetch(`${BACKEND_URL}/tags/${userId}`);
   if (!response.ok) {
     throw new Error('failed to fetch tags');
   }

@@ -7,6 +7,8 @@ import { PickersDay } from '@mui/x-date-pickers/PickersDay';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import { DayCalendarSkeleton } from '@mui/x-date-pickers/DayCalendarSkeleton';
 
+const BACKEND_URL = "https://emotionary-api.onrender.com";
+
 // NOT USED
 // source code: https://github.com/mui/mui-x/blob/v8.5.2/docs/data/date-pickers/date-calendar/DateCalendarServerRequest.tsx
 
@@ -57,7 +59,7 @@ function ServerDay(props) {
 const MoodCalendar = () => {
   const [moodMap, setMoodMap] = React.useState({});
   React.useEffect(() => {
-    fetch('http://localhost:3000/entries')
+    fetch(`${BACKEND_URL}/entries`)
       .then(res => res.json())
       .then(data => {
         const map = {};

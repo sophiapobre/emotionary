@@ -17,6 +17,8 @@ import { fetchEntries } from "../features/entries/entriesSlice";
 import { RESET_APP } from "../app/rootReducer";
 import { del } from 'idb-keyval';
 
+const BACKEND_URL = "https://emotionary-api.onrender.com";
+
 const NavMenu = styled("ul")(({ theme }) => ({
   display: "flex",
   listStyle: "none",
@@ -105,7 +107,7 @@ const NavigationBar = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:3000/users/logout", {
+      const response = await fetch(`${BACKEND_URL}/users/logout`, {
         method: "POST"
       });
 

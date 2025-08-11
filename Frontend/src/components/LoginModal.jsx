@@ -21,6 +21,8 @@ import GoogleSetupModal from "./GoogleSetupModal";
 import { deriveKey } from "../utils/crypto";
 import PasskeyRequirements, { getPasskeyRequirements } from "./PasskeyRequirements";
 
+const BACKEND_URL = "https://emotionary-api.onrender.com";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -76,7 +78,7 @@ export default function LoginModal({ open, onClose, setCryptoKey }) {
     setShowError(false);
 
     try {
-      const response = await fetch("http://localhost:3000/users/google-auth", {
+      const response = await fetch(`${BACKEND_URL}/users/google-auth`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -131,7 +133,7 @@ export default function LoginModal({ open, onClose, setCryptoKey }) {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/users/register", {
+      const response = await fetch(`${BACKEND_URL}/users/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -163,7 +165,7 @@ export default function LoginModal({ open, onClose, setCryptoKey }) {
     setShowError(false);
     
     try {
-      const response = await fetch("http://localhost:3000/users/login", {
+      const response = await fetch(`${BACKEND_URL}/users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

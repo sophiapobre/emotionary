@@ -9,6 +9,8 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import LetterButton from './buttons/LetterButton';
 
+const BACKEND_URL = "https://emotionary-api.onrender.com";
+
 const TagManagementModal = ({ open, onClose, userId, userTags = [], onTagUpdated }) => {
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [name, setName] = useState('');
@@ -44,7 +46,7 @@ const TagManagementModal = ({ open, onClose, userId, userTags = [], onTagUpdated
     if (!availableColor) return alert('No more tag colours available.');
 
     try {
-      const response = await fetch('http://localhost:3000/tags', {
+      const response = await fetch(`${BACKEND_URL}/tags`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, colour: availableColor, user_id: userId }),
@@ -62,7 +64,7 @@ const TagManagementModal = ({ open, onClose, userId, userTags = [], onTagUpdated
   const handleDeleteTag = async (tagId) => {
 
     try {
-      const response = await fetch(`http://localhost:3000/tags/${tagId}`, {
+      const response = await fetch(`${BACKEND_URL}/tags/${tagId}`, {
         method: 'DELETE',
       });
 
@@ -83,7 +85,7 @@ const TagManagementModal = ({ open, onClose, userId, userTags = [], onTagUpdated
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/tags/${tagId}`, {
+      const response = await fetch(`${BACKEND_URL}/tags/${tagId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: editedName }),

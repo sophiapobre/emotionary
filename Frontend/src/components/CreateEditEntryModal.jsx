@@ -30,6 +30,8 @@ import LetterButton from "./buttons/LetterButton";
 
 const client = new InferenceClient(import.meta.env.VITE_HUGGINGFACE_ID);
 
+const BACKEND_URL = "https://emotionary-api.onrender.com";
+
 // base component: https://mui.com/material-ui/react-dialog/
 const CreateEditEntryModal = ({
   isOpen,
@@ -210,7 +212,7 @@ const CreateEditEntryModal = ({
       let response;
       if (mode === "create") {
         console.log("in create mode");
-        response = await fetch("http://localhost:3000/entries", {
+        response = await fetch(`${BACKEND_URL}/entries`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(entryData),
@@ -218,7 +220,7 @@ const CreateEditEntryModal = ({
       } else if (mode === "edit") {
         console.log("in edit mode");
         console.log(id);
-        response = await fetch(`http://localhost:3000/entries/${id}`, {
+        response = await fetch(`${BACKEND_URL}/entries/${id}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(entryData),

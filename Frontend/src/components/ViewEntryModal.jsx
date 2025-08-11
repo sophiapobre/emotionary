@@ -12,13 +12,15 @@ import EditButton from './buttons/EditButton'
 import MoodButton from './buttons/MoodButton';
 import { fetchEntries } from '../features/entries/entriesSlice';
 
+const BACKEND_URL = "https://emotionary-api.onrender.com";
+
 // base component: https://mui.com/material-ui/react-dialog/
 const ViewEntryModal = ({ isOpen, onClose, onEdit, entry }) => {
   const dispatch = useDispatch();
   
   const handleSelectMood = async (selectedMood) => {
     try {
-      await fetch(`http://localhost:3000/entries/${entry._id}`, {
+      await fetch(`${BACKEND_URL}/entries/${entry._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ mood: selectedMood }),

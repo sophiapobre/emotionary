@@ -19,6 +19,8 @@ import dayjs from "dayjs";
 import { useSelector } from "react-redux";
 import { useTheme } from '@mui/material';
 
+const BACKEND_URL = "https://emotionary-api.onrender.com";
+
 const Letter = () => {
   const theme = useTheme();
   const navigate = useNavigate();
@@ -76,7 +78,7 @@ const Letter = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/email/send-email-test",
+        `${BACKEND_URL}/email/send-email-test`,
         {
           method: "POST",
           headers: {
@@ -112,7 +114,7 @@ const Letter = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/email/schedule-email",
+        `${BACKEND_URL}/email/schedule-email`,
         {
           method: "POST",
           headers: {

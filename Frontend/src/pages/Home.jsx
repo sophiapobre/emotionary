@@ -13,6 +13,8 @@ import { UserTourStatus, createTourSteps } from "../utils/tour/tourConfig";
 import DailyPrompt from "../components/DailyPrompt";
 import MentalHealthIndicator from "../components/MentalHealthIndicator";
 
+const BACKEND_URL = "https://emotionary-api.onrender.com";
+
 const Home = ({ cryptoKey }) => {
   const userId = useSelector((state) => state.auth.userId);
   const userName = useSelector((state) => state.auth.userName);
@@ -127,8 +129,8 @@ const Home = ({ cryptoKey }) => {
     if (tour?.isActive()) {
       tour.cancel();
     }
-    
-    await fetch("http://localhost:3000/users/complete-onboarding", {
+
+    await fetch(`${BACKEND_URL}/users/complete-onboarding`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userId }),

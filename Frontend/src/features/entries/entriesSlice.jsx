@@ -1,8 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+const BACKEND_URL = "https://emotionary-api.onrender.com";
+
 export const fetchEntries = createAsyncThunk('entries/fetchEntries', async (_, { getState }) => {
     const userId = getState().auth.userId;
-    const res = await fetch(`http://localhost:3000/users/${userId}/entries`);
+    const res = await fetch(`${BACKEND_URL}/users/${userId}/entries`);
     return await res.json();
 });
 
@@ -17,7 +19,7 @@ export const filterEntries = createAsyncThunk('entries/filterEntries', async (_,
     if (tagId) params.append('tagId', tagId);
     params.append('deleted', deleted === true ? 'true' : 'false');
     params.append('page', page);
-    const res = await fetch(`http://localhost:3000/entries/filter/${userId}?${params.toString()}`);
+    const res = await fetch(`${BACKEND_URL}/entries/filter/${userId}?${params.toString()}`);
     const data = await res.json();
     return {
       filteredEntries: data.entries,
@@ -29,7 +31,7 @@ export const filterEntries = createAsyncThunk('entries/filterEntries', async (_,
 
 export const favoriteEntry = createAsyncThunk('entries/favoriteEntry', async (entry) => {
     const update = entry.favorite === true ? false : true;
-    const res = await fetch(`http://localhost:3000/entries/${entry._id}`, {
+    const res = await fetch(`${BACKEND_URL}/entries/${entry._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ favorite: update }),
@@ -38,12 +40,12 @@ export const favoriteEntry = createAsyncThunk('entries/favoriteEntry', async (en
 });
 
 export const hardDeleteEntry = createAsyncThunk('entries/hardDeleteEntry', async (entry) => {
-    const res = await fetch(`http://localhost:3000/entries/${entry._id}`, { method: 'DELETE' });
+    const res = await fetch(`${BACKEND_URL}/entries/${entry._id}`, { method: 'DELETE' });
     return await res.json();
 });
 
 export const softDeleteEntry = createAsyncThunk('entries/softDeleteEntry', async (entry) => {
-    const res = await fetch(`http://localhost:3000/entries/${entry._id}`, {
+    const res = await fetch(`${BACKEND_URL}/entries/${entry._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ deleted: true, deletedAt: new Date() }),
@@ -52,7 +54,7 @@ export const softDeleteEntry = createAsyncThunk('entries/softDeleteEntry', async
 });
 
 export const restoreEntry = createAsyncThunk('entries/restore', async (entry) => {
-    const res = await fetch(`http://localhost:3000/entries/${entry._id}`, {
+    const res = await fetch(`${BACKEND_URL}/entries/${entry._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ deleted: false, deletedAt: null }),
