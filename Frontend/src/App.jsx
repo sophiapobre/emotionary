@@ -93,7 +93,6 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <KeepAlive />
       <CssBaseline />
       <BrowserRouter>
         <Routes>
