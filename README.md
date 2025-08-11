@@ -33,46 +33,52 @@
 
 ## Features
 - Homepage
-![homepage]()
+<img width="1470" height="797" alt="Screenshot 2025-08-11 at 4 05 41 pm" src="https://github.com/user-attachments/assets/c17da8e4-5d7b-4a9d-940f-7d4029d5ffd7" />
 
-- Registration and login system
-![registration_login]()
+- Sign up
+<img width="1470" height="799" alt="Screenshot 2025-08-11 at 4 17 24 pm" src="https://github.com/user-attachments/assets/d5adecbf-55ee-4000-84ca-f4f7a2f50896" />
+
+- Sign in
+<img width="1470" height="798" alt="Screenshot 2025-08-11 at 4 08 34 pm" src="https://github.com/user-attachments/assets/4f7c380e-e096-4919-b512-4fcc67f50f9a" />
 
 - Create, edit, view, and delete journal entries
-![core_ux](https://github.students.cs.ubc.ca/CPSC455-2025S/team15/assets/20702/e8c44c74-a5c0-4d9e-ad98-a6a1ea0f8319)
+<img width="1327" height="556" alt="e8c44c74-a5c0-4d9e-ad98-a6a1ea0f8319" src="https://github.com/user-attachments/assets/cb50fb35-4041-41e2-b01d-df50fc3d71a3" />
+
+- Create, edit, select, and delete tags
+<img width="1338" height="771" alt="Screenshot 2025-08-11 at 4 30 56 pm" src="https://github.com/user-attachments/assets/df9fcca4-96fd-48f4-9867-7331f635ce66" />
 
 - Mood insights
-![insights](https://github.students.cs.ubc.ca/CPSC455-2025S/team15/assets/20702/4c6d559a-5ab3-4d1d-8154-c2aa98ed22a9)
+<img width="1326" height="1633" alt="4c6d559a-5ab3-4d1d-8154-c2aa98ed22a9" src="https://github.com/user-attachments/assets/6c9ff87d-0cc2-4140-9e7f-3cc5c131c3dd" />
 
 - Filter entries by start/end dates, mood, tag, favorites, and/or deleted
-![filtering](https://github.students.cs.ubc.ca/CPSC455-2025S/team15/assets/20702/0c0d04e8-bd54-4c68-9e15-c3881d9f7691)
+<img width="1193" height="504" alt="0c0d04e8-bd54-4c68-9e15-c3881d9f7691" src="https://github.com/user-attachments/assets/83bfc142-be30-4037-abae-ede9e0241cbf" />
 
 - Search entries by title, content, or tags
-![search](https://github.students.cs.ubc.ca/CPSC455-2025S/team15/assets/20702/6c65279a-7e91-44c2-8c15-08502de5c39c)
+<img width="1000" height="649" alt="6c65279a-7e91-44c2-8c15-08502de5c39c" src="https://github.com/user-attachments/assets/68c5f275-76cb-4a5d-8979-e311302e8132" />
 
 - Time Capsule feature to write a letter to your future self
-![time_capsule](https://github.students.cs.ubc.ca/CPSC455-2025S/team15/assets/20702/8f76ffab-8f6a-4f85-8192-d2efc4b034d1)
+<img width="1208" height="1136" alt="8f76ffab-8f6a-4f85-8192-d2efc4b034d1" src="https://github.com/user-attachments/assets/d4028a70-fae1-45b8-a53f-b6a4b227cda8" />
 
 - Client-side encryption for journal entry content
-![encryption](https://github.students.cs.ubc.ca/CPSC455-2025S/team15/assets/20702/0712c9ba-0c9b-4336-9cbc-48012bae86a1)
+<img width="1390" height="472" alt="0712c9ba-0c9b-4336-9cbc-48012bae86a1" src="https://github.com/user-attachments/assets/e7acadc9-f73d-47f8-b81a-ac9b6a31cf0c" />
 
 - ML for sentiment analysis
-![sentiment](https://github.students.cs.ubc.ca/CPSC455-2025S/team15/assets/20702/0d151348-79ff-486d-aa59-6fb4a8f57e3f)
+<img width="1060" height="602" alt="0d151348-79ff-486d-aa59-6fb4a8f57e3f" src="https://github.com/user-attachments/assets/1724d09f-4ddf-4329-b4a1-16e1ac12ba0f" />
 
 - Mental health indicator and resources
-![health](https://github.students.cs.ubc.ca/CPSC455-2025S/team15/assets/20702/e697efcf-ed3b-4e1f-87c6-6a455340f047)
+<img width="614" height="863" alt="e697efcf-ed3b-4e1f-87c6-6a455340f047" src="https://github.com/user-attachments/assets/98d47584-ef6a-43b1-8fbe-7a95ac33064e" />
 
 - Daily prompts to guide reflection
-![daily_prompts](https://github.students.cs.ubc.ca/CPSC455-2025S/team15/assets/20702/33a17f60-7446-4e21-903f-6fbe4c5c7940)
+<img width="1250" height="483" alt="33a17f60-7446-4e21-903f-6fbe4c5c7940" src="https://github.com/user-attachments/assets/7bcc1828-505d-4fff-807f-89f9e0e0c6b4" />
 
 - Dark mode for user accessibility and to reduce eye strain
-![dark_mode](https://github.students.cs.ubc.ca/CPSC455-2025S/team15/assets/20702/fa421744-476a-42a4-aba6-2637ff23d8f5)
+<img width="1538" height="463" alt="fa421744-476a-42a4-aba6-2637ff23d8f5" src="https://github.com/user-attachments/assets/083534e8-b841-44a5-896d-c6ac2389c39e" />
 
 - Ability to soft/hard delete and restore entries
-![delete](https://github.students.cs.ubc.ca/CPSC455-2025S/team15/assets/20702/b9f5bcd3-3f46-410a-8525-a2a82b55b6a9)
+<img width="1489" height="602" alt="b9f5bcd3-3f46-410a-8525-a2a82b55b6a9" src="https://github.com/user-attachments/assets/aa585dcc-1d4c-48e2-ae16-6bebaa72a023" />
 
 - Tutorial for first-time users
-![tutorial](https://github.students.cs.ubc.ca/CPSC455-2025S/team15/assets/20702/1313d30d-219b-4acf-8b20-d0adb6135830)
+<img width="1080" height="528" alt="1313d30d-219b-4acf-8b20-d0adb6135830" src="https://github.com/user-attachments/assets/d9bde3db-eeef-4370-80ba-69cdcbdedd60" />
 
 ## Test Suite
 We implemented a comprehensive test suite using the Mocha and Chai testing frameworks, as well as mongodb-memory-server and supertest. Our backend tests cover all API routes for entries, tags, and users; our frontend tests cover filtering for our search functionality. Additionally, we used mochawesome to generate our test reports.
@@ -109,4 +115,5 @@ The following credentials need to be included in your `.env` file:
         - password: emotionSlary1$!
 6. Tests reports are automatically generated in the project's root directory in the `test-results` folder and can be opened in your browser of choice:
     - `backend-test-report.html`
+
     - `frontend-test-report.html`
