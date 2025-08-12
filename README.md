@@ -131,7 +131,7 @@ Create a `.env` file with the following credentials:
 We implemented a comprehensive test suite using the Mocha and Chai testing frameworks, as well as Vitest for frontend testing and Supertest for API testing. Our backend tests cover all API routes for entries, tags, and users; our frontend tests cover filtering for our search functionality. Additionally, we used mochawesome to generate our test reports.
 
 ### Running tests locally
-1. Clone this repo and add the `.env` file
+1. Clone this repo and add the `.env` file to the root directory
 2. Install dependencies:
    ```bash
    cd Backend && npm install
@@ -148,7 +148,7 @@ We implemented a comprehensive test suite using the Mocha and Chai testing frame
 5. Test reports will be generated in the `test-results` folder
 
 ### Running tests on Docker
-1. Clone this repo and add the `.env` file
+1. Clone this repo and add the `.env` file to the root directory
 2. If you would like to run the test suite separately:
    ```bash
    docker compose up --build test
@@ -162,4 +162,5 @@ We implemented a comprehensive test suite using the Mocha and Chai testing frame
 ### Links
 - [Backend tests](https://github.com/sophiapobre/emotionary/tree/be1f0ed7bc43d72e03ad3d0ccde990cf52e82df6/Backend/test)
 - [Frontend tests](https://github.com/sophiapobre/emotionary/tree/be1f0ed7bc43d72e03ad3d0ccde990cf52e82df6/Frontend/test)
+
 
