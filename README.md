@@ -36,8 +36,6 @@ You can demo the app [here](https://emotionary-ubc.vercel.app).
 - [Chai](https://www.chaijs.com/) - JavaScript assertion library for Node.js
 
 ## Features and Screenshots
-<details>
-<summary>Click to expand</summary>
 
 - Homepage
 <img width="1470" height="797" alt="Screenshot 2025-08-11 at 4 05 41 pm" src="https://github.com/user-attachments/assets/c17da8e4-5d7b-4a9d-940f-7d4029d5ffd7" />
@@ -86,8 +84,6 @@ You can demo the app [here](https://emotionary-ubc.vercel.app).
 
 - Tutorial for first-time users
 <img width="1080" height="528" alt="1313d30d-219b-4acf-8b20-d0adb6135830" src="https://github.com/user-attachments/assets/d9bde3db-eeef-4370-80ba-69cdcbdedd60" />
-
-</details>
 
 ## Getting Started
 
@@ -166,6 +162,7 @@ We implemented a comprehensive test suite using the Mocha and Chai testing frame
 ### Links
 - [Backend tests](https://github.com/sophiapobre/emotionary/tree/be1f0ed7bc43d72e03ad3d0ccde990cf52e82df6/Backend/test)
 - [Frontend tests](https://github.com/sophiapobre/emotionary/tree/be1f0ed7bc43d72e03ad3d0ccde990cf52e82df6/Frontend/test)
+
 
 
 
