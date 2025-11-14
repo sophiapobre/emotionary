@@ -1,6 +1,6 @@
 ﻿# emotionary
  
-*emotionary* is a journaling web app that uses ML to perform sentiment analysis on users' journal entries, allowing users to easily track their mood trends through visual insights. Our app offers a seamless and intuitive user experience, complete with features such as tagging, favoriting, filtering, and search. Our top priority is user privacy, and we securely encrypt journal entry content using password-based key derivation.
+*emotionary* is a journaling web app that uses machine learning for sentiment analysis, helping users track mood trends through clear visual insights. Our app offers a seamless and intuitive user experience, complete with features such as tagging, favoriting, filtering, and search. Our top priority is user privacy, and we securely encrypt journal entry content using password-based key derivation.
 
 You can demo the app [here](https://emotionary-ubc.vercel.app).
 
@@ -8,7 +8,7 @@ You can demo the app [here](https://emotionary-ubc.vercel.app).
 
 - [Developers](#developers)
 - [Technologies Used](#technologies-used)
-- [Features](#features)
+- [Features and Screenshots](#features-and-screenshots)
 - [Getting Started](#getting-started)
 - [Test Suite](#test-suite)
 
@@ -35,7 +35,9 @@ You can demo the app [here](https://emotionary-ubc.vercel.app).
 - [Mocha](https://mochajs.org/) - JavaScript test framework that runs on Node.js
 - [Chai](https://www.chaijs.com/) - JavaScript assertion library for Node.js
 
-## Features
+## Features and Screenshots
+<details>
+<summary>Click to expand</summary>
 
 - Homepage
 <img width="1470" height="797" alt="Screenshot 2025-08-11 at 4 05 41 pm" src="https://github.com/user-attachments/assets/c17da8e4-5d7b-4a9d-940f-7d4029d5ffd7" />
@@ -59,7 +61,7 @@ You can demo the app [here](https://emotionary-ubc.vercel.app).
 <img width="1193" height="504" alt="0c0d04e8-bd54-4c68-9e15-c3881d9f7691" src="https://github.com/user-attachments/assets/83bfc142-be30-4037-abae-ede9e0241cbf" />
 
 - Search entries by title, content, or tags
-<img width="1000" height="649" alt="6c65279a-7e91-44c2-8c15-08502de5c39c" src="https://github.com/user-attachments/assets/68c5f275-76cb-4a5d-8979-e311302e8132" />
+<img width="963" height="500" alt="Screenshot 2025-11-14 at 8 15 14 pm" src="https://github.com/user-attachments/assets/fedbf864-59cb-4e5e-b2e0-fe1398f2ee36" />
 
 - Time Capsule feature to write a letter to your future self
 <img width="1208" height="1136" alt="8f76ffab-8f6a-4f85-8192-d2efc4b034d1" src="https://github.com/user-attachments/assets/d4028a70-fae1-45b8-a53f-b6a4b227cda8" />
@@ -79,11 +81,13 @@ You can demo the app [here](https://emotionary-ubc.vercel.app).
 - Dark mode for user accessibility and to reduce eye strain
 <img width="1538" height="463" alt="fa421744-476a-42a4-aba6-2637ff23d8f5" src="https://github.com/user-attachments/assets/083534e8-b841-44a5-896d-c6ac2389c39e" />
 
-- Ability to soft/hard delete and restore entries
+- Ability to soft-delete, hard-delete, and restore entries
 <img width="1489" height="602" alt="b9f5bcd3-3f46-410a-8525-a2a82b55b6a9" src="https://github.com/user-attachments/assets/aa585dcc-1d4c-48e2-ae16-6bebaa72a023" />
 
 - Tutorial for first-time users
 <img width="1080" height="528" alt="1313d30d-219b-4acf-8b20-d0adb6135830" src="https://github.com/user-attachments/assets/d9bde3db-eeef-4370-80ba-69cdcbdedd60" />
+
+</details>
 
 ## Getting Started
 
@@ -91,10 +95,10 @@ You can demo the app [here](https://emotionary-ubc.vercel.app).
 You will need to have credentials for [Google OAuth 2.0](https://developers.google.com/identity/protocols/oauth2), [MongoDB Atlas](https://www.mongodb.com/atlas), [Resend API](https://resend.com/), and [Hugging Face API](https://huggingface.co/tabularisai/multilingual-sentiment-analysis).
 
 Create a `.env` file with the following credentials:
-- `GOOGLE_ID` - your Google OAuth 2.0 key
-- `MONGODB_ID` - your MongoDB Atlas key
+- `GOOGLE_ID` - your Google OAuth 2.0 Client ID
+- `MONGODB_ID` - your MongoDB URI
 - `RESEND_API_KEY` - your Resend API key
-- `VITE_GOOGLE_ID` - your Google OAuth 2.0 key
+- `VITE_GOOGLE_ID` - your Google OAuth 2.0 Client ID
 - `VITE_HUGGINGFACE_ID` - your Hugging Face API key
 - `VITE_API_URL=http://localhost:3000`
 
@@ -114,15 +118,15 @@ Create a `.env` file with the following credentials:
    ```bash
    cd Frontend && npm run dev
    ```
-6. Backend API runs at: http://localhost:3000
-7. Frontend will be available at: http://localhost:5174 (or the port shown in your terminal)
+6. The backend API runs at: http://localhost:3000
+7. The frontend will be available at: http://localhost:5174 (or the port shown in your terminal)
 
 ### Running the app on Docker
 1. Clone this repo
 2. Replace the `.env.example` file in the root directory with your `.env` file
 3. Run `docker compose up --build`
-4. Backend API runs at: http://localhost:3000
-5. Frontend will be available at: http://localhost
+4. The backend API runs at: http://localhost:3000
+5. The frontend will be available at: http://localhost
 6. Test reports are automatically generated in the project's root directory in the `test-results` folder and can be opened in your browser of choice:
     - `backend-test-report.html`
     - `frontend-test-report.html`
@@ -149,7 +153,7 @@ We implemented a comprehensive test suite using the Mocha and Chai testing frame
 
 ### Running tests on Docker
 1. Clone this repo and add the `.env` file to the root directory
-2. If you would like to run the test suite separately:
+2. To run the test suite separately:
    ```bash
    docker compose up --build test
    ```
@@ -162,5 +166,6 @@ We implemented a comprehensive test suite using the Mocha and Chai testing frame
 ### Links
 - [Backend tests](https://github.com/sophiapobre/emotionary/tree/be1f0ed7bc43d72e03ad3d0ccde990cf52e82df6/Backend/test)
 - [Frontend tests](https://github.com/sophiapobre/emotionary/tree/be1f0ed7bc43d72e03ad3d0ccde990cf52e82df6/Frontend/test)
+
 
 
